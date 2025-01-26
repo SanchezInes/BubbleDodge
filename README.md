@@ -9,6 +9,6 @@ If you don't have pygame on your computer, you need to run it on an environment 
 
     source my-venv/bin/activate
 
-And then you can laucnh the game:
+And then you can launch the game:
 
     ./game.py
