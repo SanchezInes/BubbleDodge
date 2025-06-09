@@ -6,12 +6,12 @@ import pygame
 def handle_movements(char, SCREEN_WIDTH):
     x, y = char.rect.center
     keys = pygame.key.get_pressed()
-    
-    if x > -35 and keys[pygame.K_LEFT]:
+
+    if x > -35 and (keys[pygame.K_LEFT] or keys[pygame.K_q]):
         char.setDirection('left')
         char.image = pygame.image.load('include/char/char_walk_left.gif').convert()
         char.image = pygame.transform.scale(char.image, (100, 100))
-    elif x < SCREEN_WIDTH - 70 and keys[pygame.K_RIGHT]:
+    elif x < SCREEN_WIDTH - 70 and (keys[pygame.K_RIGHT] or keys[pygame.K_d]):
         char.setDirection('right')
         char.image = pygame.image.load('include/char/char_walk_right.gif').convert()
         char.image = pygame.transform.scale(char.image, (100, 100))
