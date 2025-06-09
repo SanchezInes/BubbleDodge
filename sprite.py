@@ -9,21 +9,16 @@ class sprite(pygame.sprite.Sprite):
         self.image = texture
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
-        self.move_dir_x  = 0                        
-        self.move_dir_y  = 0
+        self.move_dir_x  = x                        
+        self.move_dir_y  = y
 
     def update(self):
-        x, y = self.rect.center
-        x += self.move_dir_x
-        self.rect.center = (x, y)
+        self.rect.center = (self.move_dir_x, self.move_dir_y)
 
     def setDirection(self, dir):
         if (dir == 'left'):
-            self.move_dir_x = -3
-            self.move_dir_y = 0
+            self.move_dir_x -= 3
+            self.move_dir_y = self.move_dir_y
         if (dir == 'right'):
-            self.move_dir_x = 3
-            self.move_dir_y = 0
-        if (dir == 'null'):
-            self.move_dir_x = 0
-            self.move_dir_y = 0
+            self.move_dir_x += 3
+            self.move_dir_y = self.move_dir_y

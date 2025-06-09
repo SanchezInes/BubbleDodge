@@ -13,9 +13,8 @@ def render_window(screen, clock, SCREEN_WIDTH):
     while running:
         if handle_events(char, SCREEN_WIDTH) == False:
             running = False
-        char = handle_events(char, SCREEN_WIDTH)
+        handle_movements(char, SCREEN_WIDTH)
         screen.fill("purple")
-        char.update()
         screen.blit(char.image, char.rect.center)
         pygame.display.flip()
         clock.tick(60)
